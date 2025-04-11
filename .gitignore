@@ -1,0 +1,7 @@
+# Ignore the data and out directories.
+data/
+out/
+
+# Ignore all .splat and .ply files.
+*.splat
+*.ply
