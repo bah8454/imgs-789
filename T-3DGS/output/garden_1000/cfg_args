@@ -1,0 +1,1 @@
+Namespace(sh_degree=3, source_path='C:\\Users\\bah\\Documents\\RIT\\Semester 7\\DD\\data\\360_v2\\garden', model_path='./output/049c217d-5', images='images', depths='', resolution=8, white_background=False, train_test_exp=False, data_device='cuda', eval=False, masks='', mask_dilate=5)

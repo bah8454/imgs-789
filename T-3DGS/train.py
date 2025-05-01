@@ -410,17 +410,17 @@ def training(
                         os.path.join(args.model_path, "report.txt"),
                     )
 
-                # if not pipe.disable_transient:
-                if True:
-                    masked_frames = []
-                    # transient_model.eval()
-                    for viewpoint_cam in tqdm(cams):
-                        gt_image = viewpoint_cam.original_image.cuda()
-                        mask = masks_bank[viewpoint_cam.image_name]
-                        masked_img = mask_frame(prep_img(gt_image), mask)
-                        masked_frames.append(masked_img)
+                if not pipe.disable_transient:
+                    if True:
+                        masked_frames = []
+                        # transient_model.eval()
+                        for viewpoint_cam in tqdm(cams):
+                            gt_image = viewpoint_cam.original_image.cuda()
+                            mask = masks_bank[viewpoint_cam.image_name]
+                            masked_img = mask_frame(prep_img(gt_image), mask)
+                            masked_frames.append(masked_img)
 
-                    make_video(masked_frames, scene.model_path, "masked", fps=fps)
+                        make_video(masked_frames, scene.model_path, "masked", fps=fps)
 
             if iteration in saving_iterations:
                 print("\n[ITER {}] Saving Gaussians".format(iteration))

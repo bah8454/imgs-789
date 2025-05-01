@@ -1,6 +1,10 @@
 # Ignore the data and out directories.
 data/
 out/
+models/
+opencv_build/
+opencv-4.11.0/
+
 
 # Ignore all .splat and .ply files.
 *.splat
